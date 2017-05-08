@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,15 +8,23 @@
 <title>Insert title here</title>
 </head>
 <body>
- <table>
-         <tr>
-            <td>Name</td>
-            <td>${name}</td>
-         </tr>
-         <tr>
-            <td>Id</td>
-            <td>${id}</td>
-         </tr>
-      </table>  
+	<h1>User List</h1>
+	<table>
+		<tr>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+		</tr>
+		<c:forEach items="${userList}" var="car">
+			<tr>
+				<td>${car.id} </td>
+				<td>${car.name} </td>
+				<td>${car.school} </td>
+				<td>${car.enable} </td>
+			</tr>
+		</c:forEach>
+	</table>
+	<input type="button" value="add" onclick="window.location = 'user'"/>
 </body>
 </html>

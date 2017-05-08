@@ -25,5 +25,6 @@
 
 <mappers>
     <mapper resource="com/hello/mapper/UserMapper.xml"/><!--mapper对应的xml配置文件-->
+    <mapper resource="com/hello/mapper/SchoolMapper.xml"/>
 </mappers>
 </configuration>

@@ -1,5 +1,7 @@
 package com.hello.dao;
 
+import java.util.List;
+
 import com.hello.model.User;
 
 public interface UserMapper {
@@ -39,4 +41,6 @@ public interface UserMapper {
 	 * @mbg.generated
 	 */
 	int updateByPrimaryKey(User record);
+	
+	List<User> getUserList();
 }
