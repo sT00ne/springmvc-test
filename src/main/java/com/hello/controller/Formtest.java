@@ -32,20 +32,41 @@ public class Formtest {
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String add(@ModelAttribute("SpringWeb") User user, ModelMap model) {
 		UserMapper userdao = new UserDao();
-		model.addAttribute("id", user.getId());
-		model.addAttribute("name", user.getName());
-		model.addAttribute("school", user.getSchool());
-		model.addAttribute("enable", user.getEnable());
-		Integer userAdd = userdao.insert(user);
+		if(user.getId()==null){
+			model.addAttribute("id", user.getId());
+			model.addAttribute("name", user.getName());
+			model.addAttribute("school", user.getSchool());
+			model.addAttribute("enable", user.getEnable());
+			Integer userAdd = userdao.insert(user);
+		}else{
+			model.addAttribute("id", user.getId());
+			model.addAttribute("name", user.getName());
+			model.addAttribute("school", user.getSchool());
+			model.addAttribute("enable", user.getEnable());
+			Integer userUpdate = userdao.updateByPrimaryKeySelective(user);
+		}
+		
 		return "redirect:result";
 	}
 
+	@RequestMapping(value = "/del")
+	public String del(Integer id) {
+		if(id!=0){
+			UserMapper userdao = new UserDao();
+			Integer userDelete = userdao.deleteByPrimaryKey(id);
+			return "redirect:result";
+		}else{
+			return "redirect:result";
+		}
+	}
+	
 	@RequestMapping(value = "/result")
 	public ModelAndView result() {
 		UserMapper userdao = new UserDao();
 		List<User> userList = userdao.getUserList();
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("userList", userList);
+		mv.addObject("command", new User());
 		mv.setViewName("result");
 		return mv;
 	}

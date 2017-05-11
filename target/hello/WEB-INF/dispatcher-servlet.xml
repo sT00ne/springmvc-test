@@ -10,8 +10,8 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd">
  
-	<context:component-scan base-package="com.hello" />
- 
+	<context:component-scan base-package="com.hello.controller" />
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -19,5 +19,6 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
- 
+  <mvc:resources mapping="/web-resources/**" location="/web-resources/" />
+<mvc:annotation-driven />
 </beans>

@@ -13,8 +13,18 @@ import com.hello.service.MybatisUtil;
 public class UserDao implements UserMapper {
 
 	public int deleteByPrimaryKey(Integer id) {
-		// TODO Auto-generated method stub
-		return 0;
+		SqlSession session = MybatisUtil.getInstance().openSession();
+		try {
+			session.insert("com.hello.dao.UserMapper.deleteByPrimaryKey", id);
+			session.commit();
+			session.close();
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			session.close();
+		}
 	}
 
 	public int insert(User record) {
@@ -45,8 +55,18 @@ public class UserDao implements UserMapper {
 	}
 
 	public int updateByPrimaryKeySelective(User record) {
-		// TODO Auto-generated method stub
-		return 0;
+		SqlSession session = MybatisUtil.getInstance().openSession();
+		try {
+			session.update("com.hello.dao.UserMapper.updateByPrimaryKeySelective", record);
+			session.commit();
+			session.close();
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			session.close();
+		}
 	}
 
 	public int updateByPrimaryKey(User record) {

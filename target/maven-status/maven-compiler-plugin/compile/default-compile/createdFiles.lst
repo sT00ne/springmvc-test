@@ -1,5 +1,9 @@
+com/hello/model/School.class
 com/hello/dao/UserDao.class
 com/hello/service/MybatisUtil.class
+com/hello/controller/Formtest.class
+com/hello/dao/SchoolDao.class
 com/hello/dao/UserMapper.class
 com/hello/model/User.class
 com/hello/controller/helloworld.class
+com/hello/dao/SchoolMapper.class

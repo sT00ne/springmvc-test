@@ -1,5 +1,9 @@
 /Users/st00nne/Documents/Javaworkspace/hello/src/main/java/com/hello/controller/helloworld.java
+/Users/st00nne/Documents/Javaworkspace/hello/src/main/java/com/hello/model/School.java
+/Users/st00nne/Documents/Javaworkspace/hello/src/main/java/com/hello/controller/Formtest.java
+/Users/st00nne/Documents/Javaworkspace/hello/src/main/java/com/hello/dao/SchoolMapper.java
 /Users/st00nne/Documents/Javaworkspace/hello/src/main/java/com/hello/dao/UserMapper.java
 /Users/st00nne/Documents/Javaworkspace/hello/src/main/java/com/hello/model/User.java
+/Users/st00nne/Documents/Javaworkspace/hello/src/main/java/com/hello/dao/SchoolDao.java
 /Users/st00nne/Documents/Javaworkspace/hello/src/main/java/com/hello/service/MybatisUtil.java
 /Users/st00nne/Documents/Javaworkspace/hello/src/main/java/com/hello/dao/UserDao.java
